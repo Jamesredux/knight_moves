@@ -110,13 +110,14 @@ class Knight
 			
 		end
 
-		def print_route(square)  #need method that takes this square and takes all it's parents to show the route taken
-			puts square.square.inspect
-			x = square.parent
-			puts x.square.inspect 
-			y = x.parent
-			puts y.square.inspect
-
+		def print_route(node)
+			result = [node.square]
+			x = node
+				while x.parent
+					x = x.parent
+					result<<x.square 
+				end
+				puts result.reverse.inspect
 		end	
 
 
@@ -151,4 +152,4 @@ def knight_moves(start, target)
 end
 
 
-knight_moves([3,3], [7,7])
+knight_moves([0,0], [7,0])
