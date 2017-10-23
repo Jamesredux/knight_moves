@@ -1,4 +1,17 @@
 
+class Node  # nodes are the class that makes up the data tree
+	
+	attr_accessor :square, :parent, :children
+	
+	def initialize(square, parent=nil)
+		@square = square
+		@parent = parent
+		@children = []
+		end
+
+end
+
+
 class Knight
 
 	attr_accessor :all_squares_covered, :start_position 
@@ -98,17 +111,7 @@ class Knight
 end
 
 
-class Node  # nodes are the class that makes up the data tree
-	
-	attr_accessor :square, :parent, :children
-	
-	def initialize(square, parent=nil)
-		@square = square
-		@parent = parent
-		@children = []
-		end
 
-end
 
 #####################################
 
@@ -121,8 +124,7 @@ end
 
 ##tests##
 
-knight_moves([0,0], [3,3])
+knight_moves([3,3], [4,3])
 knight_moves([3,3], [0,0])
-knight_moves([7,0], [1,1])
 knight_moves([0,0], [7,0])
 knight_moves([2,6], [2,6])
